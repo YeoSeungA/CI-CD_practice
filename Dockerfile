@@ -1,3 +1,4 @@
 FROM openjdk:11
-COPY build/libs/*.jar app.jar
+ARG JAR_FILE=build/libs/*-SNAPSHOT.jar
+COPY JAR_FILE app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
